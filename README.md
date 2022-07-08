@@ -17,7 +17,7 @@ Assumed that since its lightweight it should be fast, because of that 500ms resp
 Tests run on nightly basis but also can be ran manually via actions. If you want to run only `GET` you should type `@get` in tags.
 By default there are 5 runners assigned, but this amount can also be changed in actions when running manually.
 
-## Bugs for task
+## Bugs
 
 1. `metadata/{incorrect_subject}` should yield 400 series error code instead of 200, because the server should understand what resource the client is asking for, but it doesn't have that resource.
     - `HTTP 200` - We got the state for you; it's in the response body.
