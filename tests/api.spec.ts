@@ -8,7 +8,7 @@ test.describe.parallel('Positive Flow', () => {
         if (testInfo.duration > 500)
           throw(`Response time higher than 500 ms`);
       });
-
+    //Iterate trough coins
     coins.forEach(data => {
         test(`it should @get metadata for ${data.name.value}`, async ({request}) => {
                 //Fetch data from the API
@@ -33,7 +33,7 @@ test.describe.parallel('Positive Flow', () => {
                 //Mark as failing
                 //await testInfo.fail();
 
-
+                //Fetch data from the API
                 const response = await request.post('query', {
                     data: malformedProperties
                 });
@@ -86,6 +86,7 @@ test.describe.parallel('Positive Flow', () => {
                 expect.soft(responseBody.description.signatures[0].publicKey).toStrictEqual(data.description.signatures[0].publicKey);
 
             })
+            //Iterate trough properties & coin data
             properties.forEach(properties => {
 
                 test(`it should @get property of ${properties} for ${data.name.value}`, async ({request}) => {
@@ -101,9 +102,11 @@ test.describe.parallel('Positive Flow', () => {
                 })},
 
                 test(`it should @get metadata and name, description and url properties for ${data.name.value}`, async ({request}) => {
+                //Fetch data from the API
                 const response = await request.post('query', {
                     data: {
                         subjects: [`${data.subject}`],
+                        //Set list of properties so not using properties variable
                         properties: ["name", "description", "url"]
                     }
                 });
