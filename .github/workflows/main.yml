@@ -10,6 +10,14 @@ on:
         default: 5
       tags:
         description: 'Tags to run tests scenarios'
+      choice:
+        type: choice
+        description: What browser to run tests via
+        options:
+        - all
+        - webkit
+        - chromium
+        - firefox
   push:
     branches:
       - main
@@ -32,4 +40,4 @@ jobs:
     - name: Install Playwright
       run: npx playwright install
     - name: Run Playwright tests
-      run: npx playwright test --browser=firefox --config=prod.config.ts --workers=${{ github.event.inputs.workersAmount }} --grep=${{ github.event.inputs.tags }}
+      run: npx playwright test --browser=webkit --config=prod.config.ts --workers=${{ github.event.inputs.workersAmount }} --grep=${{ github.event.inputs.tags }}

@@ -1,5 +1,4 @@
 import { test , expect } from '@playwright/test'
-import { coins } from './helpers/data/coins_data';
 import { durationLimit, malformedUrl , nonExistantSubject  } from './helpers/data/consts'
 
 
