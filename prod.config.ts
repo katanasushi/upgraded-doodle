@@ -10,7 +10,8 @@ const config: PlaywrightTestConfig = {
     video: 'on-first-retry',
     bypassCSP: false,
     trace: 'on',
-    screenshot: 'only-on-failure'
+    screenshot: 'only-on-failure',
+    reporter: process.env.CI ? 'github' : 'list',
     },
 };
 
