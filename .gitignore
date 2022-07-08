@@ -1,6 +1,5 @@
 # Dependency directories
 /node_modules
-
 # screenshots & videos
 /test-results
 .DS_Store
