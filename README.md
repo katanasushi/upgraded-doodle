@@ -1,4 +1,6 @@
-# API Tests for http://metadata-server-mock.herokuapp.com/metadata/
+# API Tests for 
+
+## http://metadata-server-mock.herokuapp.com/metadata/
 
 API Tests for http://metadata-server-mock.herokuapp.com/metadata/
 
@@ -9,6 +11,7 @@ npm run test:mainnet
 ```
 ## About
 
+BaseURL resides in `prod.config.ts`. 
 All tests run in parallel, there are two suits, one is for positive flow and one for negative.
 Assumed that since its lightweight it should be fast, because of that 500ms response time is set.
 Tests run on nightly basis but also can be ran manually via actions. If you want to run only `GET` you should type `@get` in tags.
