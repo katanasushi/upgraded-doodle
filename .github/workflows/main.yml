@@ -2,10 +2,10 @@ name: Playwright Tests
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      workersAmount:
+        description: 'Workers'
         required: true
-        default: 'info'
+        default: 5
       tags:
         description: 'Tags to run tests scenarios'
   push:
@@ -30,4 +30,4 @@ jobs:
     - name: Install Playwright
       run: npx playwright install
     - name: Run Playwright tests
-      run: npx playwright test --browser=firefox --config=prod.config.ts --workers=5 --grep=${{ github.event.inputs.tags }} --loglevel=${{ github.event.inputs.logLevel }}
+      run: npx playwright test --browser=firefox --config=prod.config.ts --workers=${{ github.event.inputs.workersAmount }} --grep=${{ github.event.inputs.tags }}
