@@ -11,11 +11,11 @@ npm run test
 ```
 ## About
 
-BaseURL resides in `prod.config.ts`. 
+BaseURL resides in `prod.config.ts`. Test data is inside of `coins_data.ts` and `consts.ts`.
 All tests run in parallel, there are two suits, one is for positive flow and one for negative.
-Assumed that since its lightweight it should be fast, because of that 500ms response time is set.
-Tests run on nightly basis but also can be ran manually via actions. If you want to run only `GET` you should type `@get` in tags.
-By default there are 5 runners assigned, but this amount can also be changed in actions when running manually.
+Assumed that since its lightweight, it should be fast, because of that 500ms response time is set.
+Tests run on nightly basis, but also can be ran manually via actions. If you want to run only `GET` you should type `@get` in tags.
+By default, there are 5 runners assigned, but this amount can also be changed in actions when running manually.
 
 ## Bugs
 
