@@ -1,7 +1,7 @@
 {
-  "name": "etherscan",
+  "name": "API",
   "version": "1.0.0",
-  "description": "Test automation of etherscan",
+  "description": "API Test Automation",
   "scripts": {
     "test:mainnet": "npx playwright test --browser=webkit --config=prod.config.ts --workers=5",
     "test:debug": "npx playwright test --headed",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sushiphoez/registration-test.git"
+    "url": "https://github.com/katanasushi/upgraded-doodle.git"
   },
   "author": "QA",
   "license": "ISC",

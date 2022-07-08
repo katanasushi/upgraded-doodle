@@ -1,3 +1,5 @@
+export const durationLimit = 500;
+
 export const properties = [    
     "name",
     "ticker",
