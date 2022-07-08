@@ -26,7 +26,7 @@ export function checkResponseWithData(responseBody, data){
   expect.soft(responseBody.name.value).toBe(data.name.value)
   expect.soft(responseBody.ticker.value).toBe(data.ticker.value)
   expect.soft(responseBody.decimals.value).toBe(data.decimals.value)
-  expect.soft(responseBody.policy).not.toBe(data.policy)
+  expect.soft(responseBody.policy).toBe(data.policy)
   expect.soft(responseBody.logo.value).toBe(data.logo.value)
   expect.soft(responseBody.description.value).toBe(data.description.value)
 }
