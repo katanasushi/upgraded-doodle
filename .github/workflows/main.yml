@@ -40,4 +40,4 @@ jobs:
     - name: Install Playwright
       run: npx playwright install
     - name: Run Playwright tests
-      run: npx playwright test --browser=webkit --config=prod.config.ts --workers=${{ github.event.inputs.workersAmount }} --grep=${{ github.event.inputs.tags }}
+      run: npx playwright test --browser=${{ github.event.inputs.choice }} --config=prod.config.ts --workers=${{ github.event.inputs.workersAmount }} --grep=${{ github.event.inputs.tags }}
