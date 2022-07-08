@@ -7,7 +7,7 @@ API Tests for http://metadata-server-mock.herokuapp.com/metadata/
 ```
 npm install
 npx playwright install
-npm run test:mainnet
+npm run test
 ```
 ## About
 
