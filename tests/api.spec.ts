@@ -1,7 +1,6 @@
 import { test , expect } from '@playwright/test'
 import { coins } from './helpers/data/coins_data';
 import { properties , malformedProperties } from './helpers/data/consts'
-import * as fun from './helpers/data/functions'
 
 test.describe.parallel('Positive Flow', () => {
     test.afterEach(async ({ }, testInfo) => {
@@ -16,7 +15,7 @@ test.describe.parallel('Positive Flow', () => {
                 const responseBody = await response.json()
 
                 //Assertions
-                fun.checkResponsePositive(200,response)
+                expect.soft(response.ok()).toBeTruthy();
                 expect.soft(responseBody).toStrictEqual(data);
                 expect.soft(responseBody.subject).toBe(data.subject)
                 expect.soft(responseBody.url.value).toBe(data.url.value)
@@ -40,7 +39,7 @@ test.describe.parallel('Positive Flow', () => {
                 const responseBody = await response.json()
 
                 //Assertions
-                fun.checkResponsePositive(200,response)
+                expect.soft(response.ok()).toBeTruthy();
                 expect.soft(responseBody.subjects[0].decimals).toBeUndefined();
                 expect.soft(responseBody.subjects[0].url).toBeUndefined();
                 expect.soft(responseBody.subjects[0].name).toBeUndefined();
@@ -58,7 +57,7 @@ test.describe.parallel('Positive Flow', () => {
                 const responseBody = await response.json()
 
                 //Assertions
-                fun.checkResponsePositive(200,response)
+                expect.soft(response.ok()).toBeTruthy();
 
                 //Signatures check
                 expect.soft(responseBody.url.signatures[0].signature).toStrictEqual(data.url.signatures[0].signature);
@@ -75,7 +74,7 @@ test.describe.parallel('Positive Flow', () => {
                 const responseBody = await response.json()
 
                 //Assertions
-                fun.checkResponsePositive(200,response)
+                expect.soft(response.ok()).toBeTruthy();
 
                 //PK check
                 expect.soft(responseBody.url.signatures[0].publicKey).toStrictEqual(data.url.signatures[0].publicKey);
@@ -96,7 +95,7 @@ test.describe.parallel('Positive Flow', () => {
                 const responseValue = data[properties].value;
 
                 //Assertions
-                fun.checkResponsePositive(200,response)
+                expect.soft(response.ok()).toBeTruthy();
 
                 expect.soft(responseBody.value).toBe(responseValue);
                 })},
@@ -113,7 +112,7 @@ test.describe.parallel('Positive Flow', () => {
                 const responseBody = await response.json()
 
                 //Assertions
-                fun.checkResponsePositive(200,response)
+                expect.soft(response.ok()).toBeTruthy();
                 expect.soft(responseBody.subjects[0].name.value).toBe(data.name.value)
                 expect.soft(responseBody.subjects[0].decimals.value).toBe(data.decimals.value)
                 expect.soft(responseBody.subjects[0].description.value).toBe(data.description.value)
