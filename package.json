@@ -1,0 +1,21 @@
+{
+  "name": "etherscan",
+  "version": "1.0.0",
+  "description": "Test automation of etherscan",
+  "scripts": {
+    "test:mainnet": "npx playwright test --browser=webkit --config=prod.config.ts --workers=5",
+    "test:debug": "npx playwright test --headed",
+    "test:chromium": "npx playwright test --browser=chromium",
+    "test:firefox": "npx playwright test --browser=firefox",
+    "test:webkit:headed": "npx playwright test --browser=webkit --config=prod.config.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sushiphoez/registration-test.git"
+  },
+  "author": "QA",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.23.2"
+  }
+}

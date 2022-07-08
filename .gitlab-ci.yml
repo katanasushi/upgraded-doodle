@@ -1,0 +1,18 @@
+variables:
+  ENV: testnet
+
+stages:
+  - test
+
+tests:
+  stage: test
+  image: mcr.microsoft.com/playwright:focal
+  script:
+    - npm install
+    - npx playwright install
+    - npm run test:${ENV}
+  artifacts:
+    when: on_failure
+    paths:
+      - test-results/
+    expire_in: 1 week
