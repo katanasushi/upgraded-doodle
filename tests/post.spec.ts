@@ -29,6 +29,7 @@ test.describe.parallel('Negative flow', () => {
     test('it should @get and give adequate error message in response status code for non-existent subject', async ({request}) => {
         const response = await request.get('💣');
         const responseBody = await response.text();
+        
         //Assertions
         expect.soft(response.ok()).toBeTruthy();
         expect.soft(responseBody).toBe("Requested subject '💣' not found");
@@ -36,6 +37,7 @@ test.describe.parallel('Negative flow', () => {
     test('it should @get and give adequate error message in response status code for malformed url', async ({request}) => {
         const response = await request.get('/:/');
         const responseBody = await response.text();
+        
         //Assertions
         expect.soft(response.status()).toBe(404);
         expect.soft(responseBody).toBe('GET /:/');
