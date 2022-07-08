@@ -10,7 +10,7 @@ import { expect } from '@playwright/test';
     expect.soft(responseBody.description.signatures[0].signature).toStrictEqual(data.description.signatures[0].signature);
 
   };
-export function checkPK (responseBody,data){
+export function checkPK (responseBody, data){
   expect.soft(responseBody.url.signatures[0].publicKey).toStrictEqual(data.url.signatures[0].publicKey);
   expect.soft(responseBody.name.signatures[0].publicKey).toStrictEqual(data.name.signatures[0].publicKey);
   expect.soft(responseBody.ticker.signatures[0].publicKey).toStrictEqual(data.ticker.signatures[0].publicKey);
