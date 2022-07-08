@@ -42,6 +42,11 @@ test.describe.parallel('Positive Flow', () => {
                 //Assertions
                 fun.checkResponsePositive(200,response)
                 expect.soft(responseBody.subjects[0].decimals).toBeUndefined();
+                expect.soft(responseBody.subjects[0].url).toBeUndefined();
+                expect.soft(responseBody.subjects[0].name).toBeUndefined();
+                expect.soft(responseBody.subjects[0].ticker).toBeUndefined();
+                expect.soft(responseBody.subjects[0].decimals).toBeUndefined();
+                expect.soft(responseBody.subjects[0].logo).toBeUndefined();
                 expect.soft(responseBody.subjects[0].description).toBeUndefined();
 
 
