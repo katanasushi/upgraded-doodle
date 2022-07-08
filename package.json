@@ -1,5 +1,5 @@
 {
-  "name": "API",
+  "name": "APIAutomation",
   "version": "1.0.0",
   "description": "API Test Automation",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-emoji"
     }
   }
 }
